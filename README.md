@@ -18,7 +18,7 @@ A Langgraph Chatbot FastAPI Template that provides intelligent agent capabilitie
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/solduma/agent_api.git
 cd agent_api
 ```
 
