@@ -41,6 +41,14 @@ pip install poetry
 ```bash
 poetry install
 ```
+## Environment Setting
+
+1. Create a `.env` file in the project root.
+2. Add the following variables to the `.env` file:
+```bash
+OPENAI_BASE_URL=your_openai_base_url
+OPENAI_API_KEY=your_openai_api_key
+```
 
 ## Development
 
