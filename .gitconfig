@@ -1,0 +1,43 @@
+[core]
+    editor = vim
+    autocrlf = input
+    whitespace = trailing-space,space-before-tab
+    excludesfile = ~/.gitignore_global
+
+[commit]
+    template = .gitmessage
+
+[init]
+    defaultBranch = main
+
+[color]
+    ui = auto
+
+[pull]
+    rebase = false
+
+[push]
+    default = current
+    autoSetupRemote = true
+
+[merge]
+    ff = only
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[alias]
+    st = status
+    co = checkout
+    br = branch
+    ci = commit
+    df = diff
+    dc = diff --cached
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    unstage = reset HEAD --
+    last = log -1 HEAD
+    amend = commit --amend
+    staged = diff --staged
+    untracked = ls-files --others --exclude-standard
+    ignored = ls-files --ignored --exclude-standard

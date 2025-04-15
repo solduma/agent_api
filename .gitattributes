@@ -1,0 +1,21 @@
+# Auto-detect text files, normalize line endings to LF  
+* text=auto  
+
+# Explicit LF for Python and related files  
+*.py text eol=lf diff=python  
+*.py3 text eol=lf  
+*.md text eol=lf  
+*.json text eol=lf  
+*.yaml text eol=lf  
+*.yml text eol=lf  
+
+# Exclude compiled/binary files  
+*.pyc binary  
+*.pyo binary  
+*.pyd binary  
+
+# Built-in macro for binary files (unsets text/diff)  
+*.png binary  
+*.jpg binary  
+*.pdf binary  
+*.zip binary  
