@@ -62,8 +62,16 @@ This project uses Ruff for code formatting and linting. Configuration can be fou
 
 To format and lint your code:
 ```bash
-poetry run python cmd.py format
-poetry run python cmd.py check
+poe format
+poe check
+```
+
+### API Test
+To run the API server:
+```bash
+poe api-dev    # Run development server
+poe api-prod   # Run production server
+poe playground # Start the playground environment
 ```
 
 ### Project Structure
