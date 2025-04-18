@@ -27,6 +27,11 @@ poethepoet = ">=0.24.2"
 [tool.poetry.group.dev.dependencies]
 pytest = ">=8.3.5"
 
+[[tool.poetry.source]]
+name = "fossera"
+url = "http://repo.hyundaicapital.com:8443/repository/pypi-public/simple/"
+priority = "primary"
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"

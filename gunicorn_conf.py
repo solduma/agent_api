@@ -14,8 +14,8 @@ worker_class = "uvicorn.workers.UvicornWorker"
 
 # Logging Options
 loglevel = "info"
-accesslog = "./logs/gunicorn-access.log"
-errorlog = "./logs/gunicorn-error.log"
+accesslog = "./logs/api-access.log"
+errorlog = "./logs/api-error.log"
 
 max_requests = 1000
 max_requests_jitter = 100
