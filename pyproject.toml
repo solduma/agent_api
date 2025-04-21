@@ -1,0 +1,77 @@
+[tool.poetry]
+name = "agent_api"
+version = "0.1.0"
+description = "A Langgraph Chatbot FastAPI Template"
+authors = ["SAI-dev <ai@myurl.com>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+ruff = ">=0.11.4"
+python-dotenv = ">=1.1.0"
+fastapi = ">=0.115.12"
+uvicorn = ">=0.34.0"
+gunicorn = ">=23.0.0"
+langgraph = ">=0.3.27"
+langchain_openai = ">=0.3.12"
+python-multipart = ">=0.0.20"
+streamlit = ">=1.44.1"
+pydantic-settings = ">=2.8.1"
+pydub = ">=0.25.1"
+poethepoet = ">=0.24.2"
+pydantic = "^2.11.3"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8.3.5"
+
+# [[tool.poetry.source]]
+# name = "fossera"
+# url = "http://repo.myurl.com:8443/repository/pypi-public/simple/"
+# priority = "primary"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 100
+indent-width = 4
+exclude = [
+    ".git",
+    ".env",
+    ".venv",
+    "venv",
+    "env",
+    "__pycache__",
+    "build",
+    "dist",
+    "*.egg-info",
+    ".*",
+    "__init__.py",
+    "*.md"
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "UP", "B", "SIM", "W", "D", "I", "ANN", "ARG", "PL", "PTH"]
+ignore = ["D203", "D212", "SIM117"]
+fixable = ["ALL"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.poe.tasks]
+format = "ruff format ."
+check = "ruff check . --fix --output-file ruff.log"
+api-dev = "uvicorn src.main:app --reload"
+playground = "nohup streamlit run ./src/core/playground.py &"
+
+[tool.poe.tasks.api-prod]
+shell = "nohup gunicorn -c gunicorn_conf.py src.main:app --log-level debug &"
+
+[tool.pytest]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]

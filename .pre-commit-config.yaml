@@ -1,0 +1,16 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff
+        name: Run Ruff Linter
+        entry: ruff check .
+        language: python
+        types: [python]
+        stages: [pre-commit]
+        args: [--exit-non-zero-on-fix]  # Ensures commit fails on errors
+      - id: ruff-format
+        name: Run Ruff Formatter
+        entry: ruff format .
+        language: python
+        types: [python]
+        stages: [pre-commit]
